@@ -5,15 +5,14 @@
     box-sizing: border-box;
 }
 
-/* Body styles */
 body {
     font-family: 'Arial', sans-serif;
     background: #f4f6f8;
     color: #333;
     line-height: 1.7;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -56,6 +55,18 @@ body {
 
 .navbar nav a:hover::after {
     width: 100%;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.toggle-btn:hover {
+    transform: rotate(20deg);
 }
 
 /* Hero Section */
@@ -130,4 +141,40 @@ footer {
     background: #333;
     color: white;
     margin-top: 3rem;
+}
+
+/* Dark Mode */
+body.dark {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark .navbar {
+    background: #1f1f1f;
+}
+
+body.dark .navbar nav a {
+    color: #e0e0e0;
+}
+
+body.dark .hero {
+    background: linear-gradient(120deg, #222 0%, #333 100%);
+}
+
+body.dark .feature {
+    background: #1e1e1e;
+}
+
+body.dark footer {
+    background: #1a1a1a;
+}
+
+body.dark .hero .btn {
+    background: #007acc;
+    color: white;
+}
+
+body.dark .hero .btn:hover {
+    background: white;
+    color: #007acc;
 }
