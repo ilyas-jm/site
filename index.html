@@ -38,46 +38,30 @@
             <p>Follow our subreddit for the latest news and threads.</p>
             <a href="https://www.reddit.com/" target="_blank" class="btn">Visit Reddit</a>
         </div>
-        <div class="feature">
-            <h2>Email</h2>
-            <p>Reach out to us via email anytime!</p>
-            <div>
-                <input type="text" id="emailField" value="contact@example.com" readonly style="text-align:center;">
-                <button onclick="copyEmail()" class="btn" style="margin-top:10px;">Copy Email</button>
-            </div>
-        </div>
     </section>
 
     <section id="contact" class="contact-section">
         <h2>Contact Us</h2>
         <p>Our email is below — simply click the button to copy!</p>
-        <input type="text" id="contactEmail" value="contact@example.com" readonly style="text-align:center;">
-        <button onclick="copyEmailContact()" class="btn" style="margin-top:10px;">Copy Email</button>
+        <div class="email-box">
+            <input type="text" id="contactEmail" value="contact@example.com" readonly>
+            <button onclick="copyEmailContact()" class="btn">Copy Email</button>
+        </div>
     </section>
 
     <footer>
-        <div class="feature">
-            <p>&copy; 2025 ilx's Website — All rights reserved.</p>
-        </div>
+        <p>&copy; 2025 ilx's Website — All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
     <script>
-        // Home button reloads the page
+        // Home button scrolls to top
         document.getElementById('home-button').addEventListener('click', function(e) {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         // Email copy logic
-        function copyEmail() {
-            const email = document.getElementById('emailField');
-            email.select();
-            email.setSelectionRange(0, 99999);
-            navigator.clipboard.writeText(email.value);
-            alert("Email address copied!");
-        }
-
         function copyEmailContact() {
             const email = document.getElementById('contactEmail');
             email.select();
