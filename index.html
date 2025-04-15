@@ -13,11 +13,8 @@
         <div class="logo">ilx Levrai</div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
+                <li><a href="#" id="home-button">Home</a></li>
                 <li><a href="#contact">Contact</a></li>
-
                 <li>
                     <button id="mode-toggle" class="toggle-btn">🌙</button>
                 </li>
@@ -28,38 +25,66 @@
     <section class="hero">
         <h1>Welcome to My Website</h1>
         <p>Crafted for speed, simplicity, and a touch of modern design.</p>
-        <a href="#" class="btn">Get Started</a>
     </section>
 
     <section class="features">
         <div class="feature">
-            <h2>Fast</h2>
-            <p>No images, no bloat — just pure speed and clean design.</p>
+            <h2>Discord</h2>
+            <p>Join our Discord community for updates and discussions.</p>
+            <a href="https://discord.com/" target="_blank" class="btn">Visit Discord</a>
         </div>
         <div class="feature">
-            <h2>Minimal</h2>
-            <p>Less is more. Simple components make for a stunning website.</p>
+            <h2>Reddit</h2>
+            <p>Follow our subreddit for the latest news and threads.</p>
+            <a href="https://www.reddit.com/" target="_blank" class="btn">Visit Reddit</a>
         </div>
         <div class="feature">
-            <h2>Responsive</h2>
-            <p>Looks great on all devices — desktop, tablet, and mobile.</p>
+            <h2>Email</h2>
+            <p>Reach out to us via email anytime!</p>
+            <div>
+                <input type="text" id="emailField" value="contact@example.com" readonly style="text-align:center;">
+                <button onclick="copyEmail()" class="btn" style="margin-top:10px;">Copy Email</button>
+            </div>
         </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Our email is below — simply click the button to copy!</p>
+        <input type="text" id="contactEmail" value="contact@example.com" readonly style="text-align:center;">
+        <button onclick="copyEmailContact()" class="btn" style="margin-top:10px;">Copy Email</button>
     </section>
 
     <footer>
-        <p>&copy; 2025 ilx's Website — All rights reserved.</p>
+        <div class="feature">
+            <p>&copy; 2025 ilx's Website — All rights reserved.</p>
+        </div>
     </footer>
-    <section id="contact" class="contact-section">
-        <h2>Contact Us</h2>
-        <p>Have questions or want to collaborate? Send us a message!</p>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
 
     <script src="script.js"></script>
+    <script>
+        // Home button reloads the page
+        document.getElementById('home-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Email copy logic
+        function copyEmail() {
+            const email = document.getElementById('emailField');
+            email.select();
+            email.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(email.value);
+            alert("Email address copied!");
+        }
+
+        function copyEmailContact() {
+            const email = document.getElementById('contactEmail');
+            email.select();
+            email.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(email.value);
+            alert("Email address copied!");
+        }
+    </script>
 </body>
 </html>
