@@ -13,6 +13,7 @@ body {
     transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -87,23 +88,6 @@ body {
     margin-bottom: 2rem;
 }
 
-.hero .btn {
-    background: white;
-    color: #007acc;
-    padding: 0.7rem 1.5rem;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-}
-
-.hero .btn:hover {
-    background: #007acc;
-    color: white;
-    transform: translateY(-2px);
-}
-
 /* Features Section */
 .features {
     display: flex;
@@ -143,45 +127,11 @@ footer {
     margin-top: 3rem;
 }
 
-/* Dark Mode */
-body.dark {
-    background: #121212;
-    color: #e0e0e0;
-}
-
-body.dark .navbar {
-    background: #1f1f1f;
-}
-
-body.dark .navbar nav a {
-    color: #e0e0e0;
-}
-
-body.dark .hero {
-    background: linear-gradient(120deg, #222 0%, #333 100%);
-}
-
-body.dark .feature {
-    background: #1e1e1e;
-}
-
-body.dark footer {
-    background: #1a1a1a;
-}
-
-body.dark .hero .btn {
-    background: #007acc;
-    color: white;
-}
-
-body.dark .hero .btn:hover {
-    background: white;
-    color: #007acc;
-}
+/* Contact Section */
 .contact-section {
     background: white;
     padding: 4rem 2rem;
-    max-width: 800px;
+    max-width: 600px;
     margin: 3rem auto;
     border-radius: 16px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
@@ -199,29 +149,37 @@ body.dark .hero .btn:hover {
     color: #555;
 }
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    margin: 0.5rem 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
+/* Email Input and Button */
+.email-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
-.contact-form button {
+.email-input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    width: 200px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.email-btn {
     background: #007acc;
     color: white;
     padding: 0.8rem 1.5rem;
-    border: none;
     border-radius: 30px;
+    border: none;
     cursor: pointer;
     font-size: 1rem;
-    margin-top: 1rem;
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.contact-form button:hover {
+.email-btn:hover {
     background: #005f99;
     transform: translateY(-2px);
 }
