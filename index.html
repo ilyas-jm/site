@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="A beautiful, minimal website crafted for simplicity and elegance.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="description" content="A beautiful, minimal website crafted for simplicity and elegance."/>
     <title>ilx's Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <header class="navbar">
         <div class="logo">ilx Levrai</div>
         <nav>
             <ul>
-                <li><a href="#" id="home-button">Home</a></li>
+                <li><a href="#hero">Home</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
                     <button id="mode-toggle" class="toggle-btn">🌙</button>
@@ -22,53 +22,44 @@
         </nav>
     </header>
 
-    <section class="hero">
+    <section id="hero" class="hero">
         <h1>Welcome to My Website</h1>
         <p>Crafted for speed, simplicity, and a touch of modern design.</p>
     </section>
 
     <section class="features">
         <div class="feature">
-            <h2>Discord</h2>
-            <p>Join our Discord community for updates and discussions.</p>
-            <a href="https://discord.com/" target="_blank" class="btn">Visit Discord</a>
+            <h2>Fast</h2>
+            <p>No images, no bloat — just pure speed and clean design.</p>
         </div>
         <div class="feature">
-            <h2>Reddit</h2>
-            <p>Follow our subreddit for the latest news and threads.</p>
-            <a href="https://www.reddit.com/" target="_blank" class="btn">Visit Reddit</a>
+            <h2>Minimal</h2>
+            <p>Less is more. Simple components make for a stunning website.</p>
+        </div>
+        <div class="feature">
+            <h2>Connect</h2>
+            <p>Join us on Discord and Reddit for community updates.</p>
+            <div class="social-buttons">
+                <a href="https://discord.com/" target="_blank" class="social-btn">Join Discord</a>
+                <a href="https://www.reddit.com/" target="_blank" class="social-btn">Visit Reddit</a>
+            </div>
         </div>
     </section>
 
     <section id="contact" class="contact-section">
         <h2>Contact Us</h2>
-        <p>Our email is below — simply click the button to copy!</p>
+        <p>Feel free to reach out. We’re happy to connect!</p>
+
         <div class="email-box">
-            <input type="text" id="contactEmail" value="contact@example.com" readonly>
-            <button onclick="copyEmailContact()" class="btn">Copy Email</button>
+            <input type="text" class="email-input" id="email" value="ilx@example.com" readonly />
+            <button class="email-btn" onclick="copyEmail()">Copy</button>
         </div>
     </section>
 
-    <footer>
+    <footer class="footer">
         <p>&copy; 2025 ilx's Website — All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Home button scrolls to top
-        document.getElementById('home-button').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Email copy logic
-        function copyEmailContact() {
-            const email = document.getElementById('contactEmail');
-            email.select();
-            email.setSelectionRange(0, 99999);
-            navigator.clipboard.writeText(email.value);
-            alert("Email address copied!");
-        }
-    </script>
 </body>
 </html>
